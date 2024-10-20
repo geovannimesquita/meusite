@@ -1,0 +1,39 @@
+body {
+  background: #0044;
+  background-size: auto 100vh;
+  font-family: arial;
+  heigt: 100vh;
+}
+
+.menu{
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: teal;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.menu ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.site-title {
+  text-align: center;
+  color: black;
+  
+}
+
+.site-subtitle{
+  text-align: center;
+  font-style: italic;
+}
