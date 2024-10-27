@@ -1,27 +1,58 @@
-/* reset do css*/
+/* CSS geral reset */
 * { 
-  margin: 1;
-  padding: 1; 
+  margin: 0;
+  padding: 0; 
   box-sizing: border-box;
-
 }
 
+/* Configurações básicas */
 body {
+  font-family: Arial, sans-serif;
   background-image: url('../img/Fundo.jpg');
-  background-size: auto 100vh;
-  font-family: arial;
-  heigt: 100vh; 
+  background-size: cover;
 }
 
+/* Header fixo para o menu */
+.menu {
+  background-color: white;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  color: teal;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos da página inicial */
 header {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; /* Centraliza na horizontal */
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  flex-direction: column; /* Permite que a seção de biografia e a imagem fiquem organizadas */
 }
-
 
 .bio-section {
   display: flex;
@@ -32,121 +63,78 @@ header {
 .profile-image {
   height: 330px;
   width: 330px;
-  margin-right: 100px; /* Espaçamento entre a imagem e o texto */
-  border-radius: 50%; /* Torna a imagem redonda, se desejar */
+  margin-right: 50px;
+  border-radius: 50%;
 }
 
 .bio p {
-  max-width: 800px; /* Limita a largura do texto para não ficar muito longo */
+  max-width: 600px;
   font-size: 1.1em;
   color: #333;
   text-align: left;
 }
 
-
-.menu{
-  background-color: white;
-  position: fixed;
-  width: 100vw;
-  top: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: teal;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.menu ul{
+/* Estilos específicos para a página de currículo */
+.curriculo-page {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 40px; /* Espaço para compensar o header fixo */
 }
 
-.menu li {
-  list-style: none;
-}
-
-.site-title {
+.curriculo-content {
+  max-width: 800px;
+  margin: auto;
   text-align: center;
-  color: black;
-  
 }
 
-.site-subtitle{
-  text-align: center;
-  font-style: italic;
+.curriculo-content h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.img-portfolio{
-  height: 180px;
-  width: 180px;
+.curriculo-content h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 30px;
+  text-align: left;
 }
 
+.curriculo-content p, .curriculo-content ul, .curriculo-content li {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.curriculo-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.curriculo-content ul li {
+  margin-bottom: 10px;
+}
+
+/* Rodapé de contato */
 .contact-footer {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #f8f8f8; /* Cor de fundo do rodapé */
-  border-top: 1px solid #ddd; /* Linha superior para separar */
-  margin-top: 20px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
 }
 
 .contact-icon {
   margin: 0 15px;
-  transition: transform 0.2s; /* Animação de hover */
+  transition: transform 0.2s;
 }
 
 .contact-icon img {
-  width: 30px; /* Tamanho dos ícones */
+  width: 30px;
   height: 30px;
 }
 
 .contact-icon:hover {
-  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-} 
-
-.certificates-header {
-  height: auto;
-  padding-top: 0;
+  transform: scale(1.1);
 }
-
-.certificates-section {
-  padding-top: 20px;
-  margin: 0 auto;
-  width: 90%;
-}
-
-.certificates-title {
-  margin-top: 0;
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 2em;
-  font-weight: bold;
-}
-
-.certificates-gallery {
-      margin-top: 100px; /* Remove qualquer espaço extra acima da galeria */
-    padding-top: 100px; /* Remove padding adicional */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 200px;
-  justify-items: center;
-}
-
-.certificate-item img {
-  max-width: 500px;
-  height: auto;
-}
-
-.certificate-item p {
-  font-weight: 600;
-  text-align: center;
-  max-width: 250px;
-  margin-top: 10px;
-}
-
-
