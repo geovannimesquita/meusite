@@ -1,140 +1,287 @@
-/* CSS geral reset */
-* { 
+/* Reset e Configurações Básicas */
+* {
   margin: 0;
-  padding: 0; 
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Configurações básicas */
 body {
   font-family: Arial, sans-serif;
-  background-image: url('../img/Fundo.jpg');
-  background-size: cover;
+  background-color: #f8f8f8;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Garante que o conteúdo ocupe a altura inteira da tela */
 }
 
-/* Header fixo para o menu */
-.menu {
-  background-color: white;
-  padding: 15px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+/* Layout Principal */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 50px;
 }
 
-.menu ul {
-  list-style: none;
+.profile {
+  background-color: white; /* Ou 'transparent' para remover completamente o fundo */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+}
+
+
+.profile-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.name-below-photo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.underline {
+  width: 40px;
+  height: 2px;
+  background-color: #007bff;
+  margin: 5px auto 10px;
+}
+
+.bio-description {
+  font-size: 0.9em;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.menu li {
-  display: inline;
+.icon img {
+  width: 44px;
+  height: 44px;
+  transition: transform 0.7s;
 }
 
-.menu a {
-  color: teal;
-  text-decoration: none;
+.icon:hover img {
+  transform: scale(1.1);
+}
+
+/* Coluna da Introdução */
+.intro {
+  max-width: 500px;
+}
+
+.intro h1 {
+  font-size: 3em;
   font-weight: bold;
-}
-
-.menu a:hover {
-  text-decoration: underline;
-}
-
-/* Estilos da página inicial */
-header {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.bio-section {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.profile-image {
-  height: 330px;
-  width: 330px;
-  margin-right: 50px;
-  border-radius: 50%;
-}
-
-.bio p {
-  max-width: 600px;
-  font-size: 1.1em;
   color: #333;
-  text-align: left;
+  margin-bottom: 10px;
 }
 
-/* Estilos específicos para a página de currículo */
-.curriculo-page {
+.intro-subtitle {
+  font-size: 1.5em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 20px 40px; /* Espaço para compensar o header fixo */
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.curriculo-content {
-  max-width: 800px;
-  margin: auto;
+.btn-primary, .btn-secondary {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
   text-align: center;
 }
 
-.curriculo-content h1 {
-  font-size: 2em;
+.btn-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  background-color: transparent;
+}
+
+.btn-secondary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  background-color: transparent;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+  background-color: #e0f0ff;
+}
+
+.intro-text {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Centralizar o conteúdo da página de currículo */
+.curriculo-page .container {
+  max-width: 800px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 20px;
+}
+
+.curriculo-page h1 {
+  font-size: 2.7em;
+  text-align: center;
   color: #333;
   margin-bottom: 20px;
 }
 
-.curriculo-content h2 {
-  font-size: 1.5em;
+.curriculo-page h2 {
+  font-size: 2em;
   color: #333;
-  margin-top: 30px;
-  text-align: left;
+  margin-top: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 25px;
 }
 
-.curriculo-content p, .curriculo-content ul, .curriculo-content li {
-  text-align: left;
+.curriculo-page p,
+.curriculo-page ul,
+.curriculo-page li {
+  font-size: 1em;
   line-height: 1.6;
-}
-
-.curriculo-content ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.curriculo-content ul li {
+  color: #333;
   margin-bottom: 10px;
 }
 
-/* Rodapé de contato */
-.contact-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+.curriculo-page ul {
+  padding-left: 20px;
+}
+
+/* Fundo cinza claro para a página de currículo */
+.curriculo-page {
   background-color: #f8f8f8;
-  border-top: 1px solid #ddd;
+  padding: 20px;
 }
 
-.contact-icon {
-  margin: 0 15px;
-  transition: transform 0.2s;
+/* Estilização do card branco */
+.cv-card {
+  background-color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o conteúdo no card */
 }
 
-.contact-icon img {
-  width: 30px;
-  height: 30px;
+/* Estilo para o cabeçalho do perfil com imagem e nome lado a lado */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
 }
 
-.contact-icon:hover {
-  transform: scale(1.1);
+/* Ajuste para a foto de perfil */
+.profile-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: top;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Estilo das informações ao lado da foto */
+.profile-info {
+  text-align: left;
+}
+
+/* Estilo dos botões */
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  background-color: transparent;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+  background-color: #e0f0ff;
+}
+
+
+/* Centralizar os títulos das seções 
+.cv-header h2 {
+  text-align: center;
+  font-size: 1.8em;
+  color: #333;
+  margin-top: 20px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+*/
+
+.cv-header section {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.cv-header h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+}
+
+.cv-header p {
+  color: #333;
+}
+
+/* projetos*/
+ 
+.construction-message {
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
